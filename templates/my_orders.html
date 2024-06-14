@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Мои заказы</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Название товара</th>
+            <th>Цена</th>
+            <th>Адрес</th>
+            <th>Телефон</th>
+            <th>Размер</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for order in orders %}
+        <tr>
+            <td>{{ order.product.name }}</td>
+            <td>{{ order.product.price }}</td>
+            <td>{{ order.address }}</td>
+            <td>{{ order.phone }}</td>
+            <td>{{ order.size }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
