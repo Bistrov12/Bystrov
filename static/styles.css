@@ -1,0 +1,76 @@
+.carousel-inner {
+    width: 100% !important; /* Используем !important, чтобы переопределить другие стили *//* Центрируем элемент */
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    border: 1px solid #007bff; /* Обводка для карточек */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для карточек */
+    transition: transform 0.2s; /* Анимация при наведении */
+    width: 100%; /* Установим ширину для карточек */
+    max-width: 300px; /* Максимальная ширина для карточек */
+}
+
+.product-card:hover {
+    transform: scale(1.05); /* Увеличение карточки при наведении */
+}
+
+.product-card img {
+    max-height: 200px;
+    object-fit: contain;
+    width: 100%;
+    border-bottom: 1px solid #007bff; /* Нижняя обводка изображения */
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1; /* Позволяет растягивать тело карточки */
+}
+
+.product-image {
+    height: 200px; /* Задаем фиксированную высоту для изображений */
+    width: 100%; /* Ширина 100% */
+    object-fit: contain; /* Масштабирование изображения, сохраняя пропорции */
+
+.search-bar {
+    width: 100% !important; /* Установите ширину на 100% и используйте !important для переопределения других стилей */
+    max-width: 1000px !important; /* Установите желаемую максимальную ширину */
+}
+.navbar .form-inline .search-bar {
+    width: 100% !important;
+    max-width: 1000px !important; /* Установите желаемую максимальную ширину */
+}
+
+.btn-outline-custom {
+    color: #007bff !important; /* Цвет текста */
+    border-color: #007bff !important; /* Цвет обводки */
+}
+
+.btn-outline-custom:hover {
+    color: #ffffff !important; /* Цвет текста при наведении */
+    background-color: #007bff !important; /* Цвет фона при наведении */
+    border-color: #007bff !important; /* Цвет обводки при наведении */
+}
+
+.btn-success {
+    color: #007bff !important; /* Цвет текста */
+    border-color: #007bff !important; /* Цвет обводки */
+}
+
+.btn-success:hover {
+    color: #ffffff !important; /* Цвет текста при наведении */
+    background-color: #007bff !important; /* Цвет фона при наведении */
+    border-color: #007bff !important; /* Цвет обводки при наведении */
+}
+
+
+
+}
+
+
