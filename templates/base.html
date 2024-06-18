@@ -48,64 +48,69 @@
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="{{ url_for('index') }}">VAZIZON</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <form class="form-inline d-flex justify-content-center w-100" action="{{ url_for('search') }}" method="GET">
-                <input class="form-control mr-sm-2 search-bar" type="search" placeholder="Найти товар" aria-label="Поиск" name="q">
-                <button class="btn btn-outline-custom my-2 my-sm-0" type="submit">Поиск</button>
-            </form>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('index') }}">Главная</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('cart') }}">Корзина</a>
-                </li>
-                {% if current_user.is_authenticated %}
-                    {% if current_user.role == 'buyer' %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url_for('my_orders') }}">Мои заказы</a>
-                        </li>
-                    {% elif current_user.role == 'seller' %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url_for('add_product') }}">Добавить товары</a>
-                        </li>
-                    {% endif %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="{{ url_for('index') }}">VAZIZON</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <form class="form-inline d-flex justify-content-center w-100" action="{{ url_for('search') }}" method="GET">
+            <input class="form-control mr-sm-2 search-bar" type="search" placeholder="Найти товар" aria-label="Поиск" name="q">
+            <button class="btn btn-outline-custom my-2 my-sm-0" type="submit">Поиск</button>
+        </form>
+
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('index') }}">Главная</a>
+            </li>
+            {% if current_user.is_authenticated %}
+                {% if current_user.role == 'buyer' %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('edit_profile') }}">{{ current_user.username }}</a>
+                        <a class="nav-link" href="{{ url_for('cart') }}">Корзина</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('logout') }}">Выход</a>
+                        <a class="nav-link" href="{{ url_for('my_orders') }}">Мои заказы</a>
                     </li>
-                {% else %}
+                {% elif current_user.role == 'seller' %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('login') }}">Вход</a>
+                        <a class="nav-link" href="{{ url_for('my_products') }}">Мои товары</a>
                     </li>
+                {% elif current_user.role == 'admin' %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('register') }}">Регистрация</a>
+                        <a class="nav-link" href="{{ url_for('admin_dashboard') }}">Панель администратора</a>
                     </li>
                 {% endif %}
-            </ul>
-        </div>
-    </nav>
-    <div class="container">
-        {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-            <div class="flashes">
-                {% for category, message in messages %}
-                    <div class="alert alert-{{ category }}">{{ message }}</div>
-                {% endfor %}
-            </div>
-        {% endif %}
-        {% endwith %}
-        {% block content %}{% endblock %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('edit_profile') }}">{{ current_user.username }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('logout') }}">Выход</a>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('login') }}">Вход</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('register') }}">Регистрация</a>
+                </li>
+            {% endif %}
+        </ul>
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</nav>
+<div class="container">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <div class="flashes">
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+    {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

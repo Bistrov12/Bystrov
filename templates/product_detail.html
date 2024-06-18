@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}{{ product.name }} - VAZIZON{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{{ url_for('static', filename=product.image_url) }}" class="card-img-top product-image" alt="{{ product.name }}">
+        </div>
+        <div class="col-md-6">
+            <h1>{{ product.name }}</h1>
+            <p>{{ product.short_description }}</p>
+            <p><strong>Цена: </strong>{{ product.price }} руб.</p>
+            <form method="POST" action="{{ url_for('add_to_cart', product_id=product.id) }}">
+                <div class="form-group">
+                    <label for="size">Размер</label>
+                    <input type="text" class="form-control" id="size" name="size" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Добавить в корзину</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

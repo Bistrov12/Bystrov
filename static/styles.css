@@ -1,6 +1,33 @@
 .carousel-inner {
-    width: 100% !important; /* Используем !important, чтобы переопределить другие стили *//* Центрируем элемент */
+    width: 100% !important; /* Используем !important, чтобы переопределить другие стили */
 }
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+    width: 100%;
+    margin: 5px 0;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: white;
+    width: 100%;
+    margin: 5px 0;
+}
+
+.btn-warning {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: black;
+    width: 100%;
+    margin: 5px 0;
+}
+
+
+
 
 .product-card {
     display: flex;
@@ -37,11 +64,13 @@
     height: 200px; /* Задаем фиксированную высоту для изображений */
     width: 100%; /* Ширина 100% */
     object-fit: contain; /* Масштабирование изображения, сохраняя пропорции */
+}
 
 .search-bar {
     width: 100% !important; /* Установите ширину на 100% и используйте !important для переопределения других стилей */
     max-width: 1000px !important; /* Установите желаемую максимальную ширину */
 }
+
 .navbar .form-inline .search-bar {
     width: 100% !important;
     max-width: 1000px !important; /* Установите желаемую максимальную ширину */
@@ -61,6 +90,7 @@
 .btn-success {
     color: #007bff !important; /* Цвет текста */
     border-color: #007bff !important; /* Цвет обводки */
+    width: 200px;
 }
 
 .btn-success:hover {
@@ -69,8 +99,82 @@
     border-color: #007bff !important; /* Цвет обводки при наведении */
 }
 
-
-
+.form-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
 }
 
+.form-container h1 {
+    text-align: center;
+}
+
+.form-container .form-group {
+    margin-bottom: 15px;
+}
+
+.form-container .form-control {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+}
+
+.form-container select.form-control {
+    width: 100%; /* Установить ширину на 100% */
+    max-width: 100%; /* Установить максимальную ширину на 100% */
+    white-space: nowrap; /* Запрещаем перенос текста */
+    padding: 1px;
+}
+
+.form-container .btn {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+}
+
+.form-container .btn:hover {
+    background-color: #0056b3;
+}
+
+.table {
+    width: 100%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.table th {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.table-bordered th, .table-bordered td {
+    border: 1px solid #dee2e6;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
 
