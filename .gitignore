@@ -1,26 +1,2 @@
-.designer/
-.gitconfig
-.idlerc/
-.lesshst
-.vscode/
-3D Objects/
-AppData/
-Contacts/
-Downloads/
-Favorites/
-Links/
-Lively Wallpaper/
-Music/
-NTUSER.DAT
-NTUSER.DAT*
-OneDrive/
-PycharmProjects/
-Saved Games/
-Searches/
-Telegram/
-Videos/
-_netrc
-ntuser.dat.LOG1
-ntuser.dat.LOG2
-ntuser.ini
-ooshutup10.cfg
+# Local Netlify folder
+.netlify
