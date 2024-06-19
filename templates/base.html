@@ -6,46 +6,7 @@
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <style>
-        .navbar .form-inline .search-bar {
-            width: 100% !important;
-            max-width: 500px !important; /* Установите желаемую максимальную ширину */
-        }
-        .btn-outline-custom {
-            color: #007bff !important; /* Цвет текста */
-            border-color: #007bff !important; /* Цвет обводки */
-        }
-        .btn-outline-custom:hover {
-            color: #ffffff !important; /* Цвет текста при наведении */
-            background-color: #007bff !important; /* Цвет фона при наведении */
-            border-color: #007bff !important; /* Цвет обводки при наведении */
-        }
-        .btn-success {
-            color: #ffffff!important; /* Цвет текста */
-            border-color: #007bff !important; /* Цвет обводки */
-            background-color: #007bff !important;
-        }
-        .btn-success:hover {
-            color: #ffffff !important; /* Цвет текста при наведении */
-            background-color: #007bff !important; /* Цвет фона при наведении */
-            border-color: #007bff !important; /* Цвет обводки при наведении */
-        }
-        .navbar-nav {
-            display: flex;
-            flex-wrap: nowrap;
-        }
-        .nav-link {
-            white-space: nowrap; /* Запрет переноса слов */
-            color: #000000 !important; /* Черный цвет текста */
-        }
-        .carousel-item img {
-            height: 400px;
-            object-fit: cover;
-        }
-        .flashes {
-            margin-top: 20px;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -108,6 +69,73 @@
     {% endif %}
     {% endwith %}
     {% block content %}{% endblock %}
+
+    <!-- Разделительная полоса перед футером -->
+    <div class="footer-divider"></div>
+
+    <!-- Footer -->
+    <footer class="bg-light text-dark mt-5 p-4 border">
+        <div class="container">
+            <div class="row">
+                <!-- Contacts Section -->
+                <div class="col-md-4 mb-3">
+                    <h5 class="font-weight-bold">Контакты</h5>
+                    <p><a href="https://maps.google.com" class="text-dark" target="_blank">Наш пункт выдачи</a></p>
+                    <p>Телефон: +7 (999) 123-45-67</p>
+                    <button class="btn btn-primary">Задать вопрос</button>
+                </div>
+                <!-- Navigation Section -->
+                <div class="col-md-4 mb-3">
+                    <h5 class="font-weight-bold">Навигация</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-dark">Главная</a></li>
+                        <li><a href="#" class="text-dark">Товары</a></li>
+                        <li><a href="#" class="text-dark">Контакты</a></li>
+                        <li><a href="#" class="text-dark">О нас</a></li>
+                    </ul>
+                </div>
+                <!-- Social Media Section -->
+                <div class="col-md-4 mb-3">
+                    <h5 class="font-weight-bold">Мы в соцсетях</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://vk.com" class="text-dark" target="_blank">VK</a></li>
+                        <li><a href="https://www.whatsapp.com" class="text-dark" target="_blank">WhatsApp</a></li>
+                    </ul>
+                    <p>&copy; 2024 VAZIZON</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<button onclick="topFunction()" id="topBtn" title="Go to top">Наверх</button>
+
+    <script>
+var topButton = document.getElementById("topBtn");
+
+window.onscroll = function() {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    topButton.style.display = "block";
+  } else {
+    topButton.style.display = "none";
+  }
+}
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+
+
+
+
+
+</script>
+
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>

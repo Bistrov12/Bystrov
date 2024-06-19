@@ -1,3 +1,15 @@
+<style>
+
+
+            body {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+    }
+
 .carousel-inner {
     width: 100% !important; /* Используем !important, чтобы переопределить другие стили */
 }
@@ -25,8 +37,6 @@
     width: 100%;
     margin: 5px 0;
 }
-
-
 
 
 .product-card {
@@ -66,14 +76,30 @@
     object-fit: contain; /* Масштабирование изображения, сохраняя пропорции */
 }
 
-.search-bar {
-    width: 100% !important; /* Установите ширину на 100% и используйте !important для переопределения других стилей */
-    max-width: 1000px !important; /* Установите желаемую максимальную ширину */
+#topBtn {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 4px;
+  width: 100px;
+}
+
+#topBtn:hover {
+  background-color: #007bff;
 }
 
 .navbar .form-inline .search-bar {
     width: 100% !important;
-    max-width: 1000px !important; /* Установите желаемую максимальную ширину */
+    max-width: 500px !important; /* Установите желаемую максимальную ширину */
 }
 
 .btn-outline-custom {
@@ -178,3 +204,93 @@
     border-color: #bd2130;
 }
 
+
+        .btn-outline-custom {
+            color: #007bff !important; /* Цвет текста */
+            border-color: #007bff !important; /* Цвет обводки */
+        }
+        .btn-outline-custom:hover {
+            color: #ffffff !important; /* Цвет текста при наведении */
+            background-color: #007bff !important; /* Цвет фона при наведении */
+            border-color: #007bff !important; /* Цвет обводки при наведении */
+        }
+        .btn-success {
+            color: #ffffff!important; /* Цвет текста */
+            border-color: #007bff !important; /* Цвет обводки */
+            background-color: #007bff !important;
+        }
+        .btn-success:hover {
+            color: #ffffff !important; /* Цвет текста при наведении */
+            background-color: #007bff !important; /* Цвет фона при наведении */
+            border-color: #007bff !important; /* Цвет обводки при наведении */
+        }
+        .navbar-nav {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+        .nav-link {
+            white-space: nowrap; /* Запрет переноса слов */
+            color: #000000 !important; /* Черный цвет текста */
+        }
+
+            .nav-link:hover {
+        color: #000000!important;
+        border-bottom: 2px solid #007bff;
+        }
+
+        .carousel-item img {
+            height: 400px;
+            object-fit: cover;
+        }
+        .flashes {
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: #ffffff;
+            color: #ffffff;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+
+
+        footer a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #17a2b8;
+            text-decoration: underline;
+        }
+
+        footer .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+
+        footer .btn-primary:hover {
+            background-color: #007bff;
+        }
+
+        footer h5 {
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .border {
+            border: 2px solid #007bff !important;
+        }
+
+
+        .footer-divider {
+            border-top: 3px solid #007bff;
+            width: 100%;
+            margin-bottom: 20px;
+            margin-top: 20px; /* Добавлено для отступа сверху */
+            position: absolute;
+            left: 0;
+        }
+</style>
